@@ -2,7 +2,7 @@ import * as core from '@actions/core';
 import { configFromJobInput } from './config';
 import { extractResult } from './extract';
 import { writeBenchmark, compareBenchmark } from './write';
-import {  getLatestPRCommit, getBaseCommit } from './git';
+import { getLatestPRCommit, getBaseCommit } from './git';
 
 async function main() {
     const config = await configFromJobInput();

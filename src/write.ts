@@ -450,9 +450,10 @@ async function loadDataJson(jsonPath: string, hideWarning?: boolean): Promise<Da
         core.debug(`Loaded external JSON file at ${jsonPath}`);
         return json;
     } catch (err) {
-        hideWarning || core.warning(
-            `Could not find external JSON file for benchmark data at ${jsonPath}. Using empty default: ${err}`,
-        );
+        hideWarning ??
+            core.warning(
+                `Could not find external JSON file for benchmark data at ${jsonPath}. Using empty default: ${err}`,
+            );
         return { ...DEFAULT_DATA_JSON };
     }
 }
