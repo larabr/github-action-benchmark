@@ -1397,7 +1397,8 @@ async function loadDataJson(jsonPath, hideWarning) {
         return json;
     }
     catch (err) {
-        hideWarning || core.warning(`Could not find external JSON file for benchmark data at ${jsonPath}. Using empty default: ${err}`);
+        hideWarning ||
+            core.warning(`Could not find external JSON file for benchmark data at ${jsonPath}. Using empty default: ${err}`);
         return { ...DEFAULT_DATA_JSON };
     }
 }
