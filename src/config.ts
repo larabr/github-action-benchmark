@@ -220,7 +220,7 @@ export async function configFromJobInput(): Promise<Config> {
     const failOnAlert = getBoolInput('fail-on-alert');
     const alertCommentCcUsers = getCommaSeparatedInput('alert-comment-cc-users');
     let externalDataJsonPath: undefined | string = core.getInput('external-data-json-path');
-    let baseFilePath: string | undefined = core.getInput('base-file-path');
+    const baseFilePath: string | undefined = core.getInput('base-file-path');
     const maxItemsInChart = getUintInput('max-items-in-chart');
     let failThreshold = getPercentageInput('fail-threshold');
 
